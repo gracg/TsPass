@@ -1,0 +1,45 @@
+<div class="GenDiv">
+
+    <div class="formDiv">
+            <form class="formObj">
+                <div class="passwodDiv">
+                    <input type="text" class="passwordOutInput" value="{{getPassword()}}">
+                </div>
+                
+                <div class="customizeLabelDiv">
+                    <label class="customizeLable">Customize your password</label>
+                </div>
+
+                <div class="lengthDiv">
+                    <input type="number" value="{{getPwLength()}}" min="{getMin()}}" step="{getStep()}}" max="{getPwMax()}}" class="lengthNum"  #nums (input)="setPwLength(nums.value)">
+                    <input type="range" value="{{getPwLength()}}" min="{getMin()}}" step="{getStep()}}" max="{getPwMax()}}" class="lengthRange" #ranger (input)="setPwLength(ranger.value)">
+                </div>
+
+                <div class="optionsDiv">
+
+                    <div class="optionBox">
+                        <input type="checkbox" checked class="isUpperCase" name="upperCase" (change)="parseBoolean($event,'uppercase')">
+                        <label>Uppercase</label>
+                    </div>
+
+                    <div class="optionBox">
+                        <input type="checkbox" checked class="isLowerCase" name="lowerCase" (change)="parseBoolean($event,'lowercase')">
+                        <label>Lowercase</label>
+                    </div>
+
+                    <div class="optionBox">
+                        <input type="checkbox" checked class="isNumbers" name="numbers" (change)="parseBoolean($event,'numbers')">
+                        <label>Numbers</label>
+                    </div>
+
+                    <div class="optionBox">
+                        <input type="checkbox" checked class="isSymbols" name="symbols" (change)="parseBoolean($event,'symbols')">
+                        <label>Symbols</label>
+                    </div>
+
+                </div>
+
+            </form>
+    </div>
+
+</div>
